@@ -1,9 +1,11 @@
 function regexVar() {
   /*
    * Declare a RegExp object variable named 're'
-   * It must match a string that starts and ends with the same vowel (i.e., {a, e, i, o, u})
+   * It must match a string that starts with 'Mr.', 'Mrs.', 'Ms.', 'Dr.', or 'Er.', 
+   * followed by one or more letters.
    */
-  let re = RegExp(/^([aeiou]).*\1$/);
+
+  let re = new RegExp('^(Mr|Mrs|Ms|Dr|Er)(\\.)([a-zA-Z])*$');
   
   /*
    * Do not remove the return statement
@@ -16,5 +18,5 @@ function main() {
   const re = regexVar();
   const s = readLine();
   
-  console.log(re.test(s));
+  console.log(!!s.match(re));
 }
