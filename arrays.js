@@ -1,21 +1,25 @@
+let array = [2,3,6,6,5]
+
 function getSecondLargest(nums) {
   // Complete the function
 
-let largest_val = nums[0];
-let second_largest_val;
+let largestNum = nums[0];
+let secondLargestNum;
 
 
-for (var i = 0; i < nums.length; i++){
-  let current_num = nums[i];
-  if (current_num > largest_val) {
-      second_largest_val = largest_val;
-      largest_val = current_num;
-  } else if (current_num < largest_val && current_num > second_largest_val) {
-      second_largest_val = current_num;
+for (let i = 0; i < nums.length; i++){
+
+  let currentNum = nums[i];
+
+  if (currentNum > largestNum) {
+      secondLargestNum = largestNum;
+      largestNum = currentNum;
+  } else if (currentNum < largestNum && currentNum > secondLargestNum) {
+      secondLargestNum = currentNum;
 
     }
   }
-  return second_largest_val;
+  return secondLargestNum;
 }
 
 
